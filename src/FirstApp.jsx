@@ -1,26 +1,27 @@
 import { Fragment } from "react"
+import PropTypes from 'prop-types'
 
+export const FirstApp = ({title, subtitle}) => {
 
+    if (!title){
+        throw new Error('No hay titulo en la app')
+    }
 
-
-
-const getGreeting = () => {
-    return 'esteban es un cra'
-}
-
-
-
-export const FirstApp = () => {
-
-    
+    // console.log(props);
     return (
         <>
-        <h1>HOLA MUNDO</h1>
-            <code>{JSON.stringify(getGreeting())}</code>
+        <h1>{title}</h1>
+            {/* <code>{JSON.stringify(getGreeting())}</code> */}
+            <p>{subtitle}</p>
         </>
     )
 }
 
+
+FirstApp.propTypes = {
+    title: PropTypes.string,
+    subtitle: PropTypes.number
+}
 
 
 
